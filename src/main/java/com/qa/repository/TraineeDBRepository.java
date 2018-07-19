@@ -35,7 +35,7 @@ public class TraineeDBRepository implements iTraineeRepository {
 		return Constants.TRAINEE_ADDED;
 	}
 
-	@Override
+	@Transactional(REQUIRED)
 	public String updateTrainee(long id, String trainee) {
 		LOGGER.info("In TraineeDBRepository updateAccount");
 		Trainee update = util.getObjectForJSON(trainee, Trainee.class);
@@ -53,7 +53,7 @@ public class TraineeDBRepository implements iTraineeRepository {
 		return manager.find(Trainee.class, id);
 	}
 
-	@Override
+	@Transactional(REQUIRED)
 	public String deleteTrainee(long id) {
 		LOGGER.info("In TraineeDBRepository deleteTrainee");
 		Trainee delete = findTrainee(id);
