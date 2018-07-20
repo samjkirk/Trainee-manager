@@ -21,9 +21,9 @@ public class Trainee {
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Subjects> subjects;
 	
-	public Trainee(long id, String name, List<Subjects> subjects) {
+	public Trainee(String name, List<Subjects> subjects) {
 		super();
-		this.name = name;
+		this.name = name; 
 		this.subjects = subjects;
 	}
 	
