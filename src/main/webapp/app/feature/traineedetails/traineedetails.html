@@ -2,6 +2,6 @@
     <h1><u>Further details</u></h1>
     <h2><bold>NAME:</bold> {{traineeCtrl.selectedTrainee.name}}</h2>
     <h2><bold>subjects</bold></h2>
-    <h3 ng-repeat="subject in traineeCtrl.selectedTrainee.subjects">{{subject}}</h3>
+    <h3 ng-repeat="subject in traineeCtrl.selectedTrainee.subjects">{{subject.subjectname}} | {{subject.skillLevel}}</h3>
     <button class="btn-default" ui-sref="trainee">Trainees</button>
 </div>
