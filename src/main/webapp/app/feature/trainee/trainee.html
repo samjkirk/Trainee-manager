@@ -1,0 +1,21 @@
+<div ng-controller="traineeController as traineeCtrl">
+    <div class="panel-heading">Trainees</div>
+    <div class="panel-body">
+        <div>
+            <h3><span>Trainee Table</span></h3>
+            <div style="overflow-y: scroll; max-height: 400px">
+            <table class="table" ng-hide="traineeCtrl.isHidden">
+                <tr>
+                    <th>{{'traineeid' | uppercase}}</th>
+                    <th>{{'name' | uppercase}}</th>
+                </tr>
+                    <tr ng-repeat="trainee in traineeCtrl.trainees" ng-click="traineeCtrl.expandTrainee(trainee)">
+                        <td>{{trainee.traineeid}}</td>
+                        <td>{{trainee.name}}</td>
+                    </tr>
+            </table>
+            </div>
+        </div>
+        <button class="btn" ng-click="traineeCtrl.hideTable()">Hide trainees</button>
+    </div>
+</div>

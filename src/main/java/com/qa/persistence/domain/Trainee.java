@@ -15,9 +15,9 @@ import javax.persistence.OneToMany;
 public class Trainee {
 	
 	@Id @GeneratedValue (strategy=GenerationType.IDENTITY)
-	private long trainee_id;
+	private long traineeid;
 	private String name;
-	@JoinColumn(name = "trainee_id")
+	@JoinColumn(name = "traineeid")
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Subjects> subjects;
 	
@@ -30,11 +30,11 @@ public class Trainee {
 	private Trainee() {}
 
 	public long getId() {
-		return trainee_id;
+		return traineeid;
 	}
 
 	public void setId(long id) {
-		this.trainee_id = id;
+		this.traineeid = id;
 	}
 
 	public String getName() {
@@ -55,7 +55,7 @@ public class Trainee {
 
 	@Override
 	public String toString() {
-		return "Trainee [id=" + trainee_id + ", name=" + name + ", subjects=" + subjects + "]";
+		return "Trainee [id=" + traineeid + ", name=" + name + ", subjects=" + subjects + "]";
 	}
 	
 	
